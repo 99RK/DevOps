@@ -15,9 +15,8 @@ run:
 
 # Run the tests
 test:
-	$(PYTHON) -m unit_test.py
+	$(PYTHON) -m unittest discover -s tests
 
 # Clean up (if needed for future use, e.g., removing temporary files)
 clean:
-	# Example: rm -rf __pycache__
 	@echo "No files to clean for now"
