@@ -15,15 +15,15 @@ class TestCurrencyConverter(unittest.TestCase):
 
     # Test GBP to NPR conversion
     def test_gbp_to_npr(self):
-        self.assertAlmostEqual(self.converter.convert(100, 'GBP', 'NPR'), 9840.0, places=2)
+        self.assertAlmostEqual(self.converter.convert(100, 'GBP', 'USD'), 9840.0, places=2)
 
     # Test NPR to USD conversion
     def test_npr_to_usd(self):
-        self.assertAlmostEqual(self.converter.convert(1000, 'NPR', 'USD'), 14.0, places=2)
+        self.assertAlmostEqual(self.converter.convert(1000, 'GBP', 'USD'), 14.0, places=2)
 
     # Test same currency conversion (should return the same amount)
     def test_same_currency(self):
-        self.assertEqual(self.converter.convert(100, 'USD', 'USD'), 100)
+        self.assertEqual(self.converter.convert(100, 'USD', 'GBP'), 100)
 
     # Test invalid currency input (should raise an appropriate error or handle gracefully)
     def test_invalid_currency(self):
