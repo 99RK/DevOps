@@ -25,7 +25,7 @@ class TestCurrencyConverter(unittest.TestCase):
         if 'NPR' in self.converter.currencies:
             self.assertAlmostEqual(self.converter.convert(1000, 'NPR', 'USD'), 14.0, places=2)
         else:
-            self.skipTest("NPR is not supported by the currency converter")
+            self.skipTest("NPR is not a supported by the currency converter")
 
     def test_same_currency(self):
         self.assertEqual(self.converter.convert(100, 'USD', 'USD'), 100)
